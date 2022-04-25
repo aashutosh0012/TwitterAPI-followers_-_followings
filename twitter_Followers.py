@@ -1,11 +1,7 @@
 '''
-#--------------------------------------------------------------------------------------------------------------------------------------------
 twitter_Followers.py
 Script to Fetch Twitter users Followers & Followings
 Save output file "username_TwitterFollowers.xlsx" to directory from where script executed.
-
-
-#----------------------------------------------------
 '''
 
 import requests,json,os,pandas as pd
@@ -14,7 +10,6 @@ headers = {
      'Authorization': 'Bearer {}'.format(bearer_token)    
 }
 
-#----------------------------------------------------------------------------------------------------------------------------------------------   
 def get_user_id(user_name):
     '''
     Fucntion Get User_id from user_name
@@ -37,9 +32,6 @@ def get_user_id(user_name):
     #user_id = user['data'][0]['id']
     return user
 
-get_user_id('aashutosh0012')
- 
-#----------------------------------------------------------------------------------------------------------------------------------------------
 def get_following_list(user_name):
     '''
     Function to return list of accounts followed by the User.
@@ -88,8 +80,6 @@ def get_following_list(user_name):
         following.to_excel(writer, sheet_name='Followings', index=False)
 
 
-
-#----------------------------------------------------------------------------------------------------------------------------------------------
 def get_followers_list(user_name):
     '''
     returns list of followers the User.
@@ -133,8 +123,6 @@ def get_followers_list(user_name):
     #Save output to excel File
     with pd.ExcelWriter(file, engine='openpyxl', if_sheet_exists='replace', mode='a') as writer:
         followers.to_excel(writer, sheet_name='Followers', index=False)
-
-#----------------------------------------------------------------------------------------------------------------------------------------------
 
 
 if __name__ == '__main__':
