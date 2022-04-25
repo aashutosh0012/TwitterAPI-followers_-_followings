@@ -9,8 +9,7 @@ Save output file "username_TwitterFollowers.xlsx" to directory from where script
 '''
 
 import requests,json,os,pandas as pd
-#bearer_token = os.environ.get("BEARER_TOKEN")
-bearer_token = 'AAAAAAAAAAAAAAAAAAAAANEJHQEAAAAAPaq8LhjeM%2F45PEEWJ7zXeXPtVuQ%3DEZ9WksWUryqwPAQKxqhWWeyLqIEn8IHEpSWUYKyXUBOGAhD2oa'
+bearer_token = os.environ.get("BEARER_TOKEN")
 headers = {
      'Authorization': 'Bearer {}'.format(bearer_token)    
 }
